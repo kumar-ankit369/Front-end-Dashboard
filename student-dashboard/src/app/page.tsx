@@ -9,7 +9,7 @@ import TaskList from "./components/TaskList";
 
 async function getCourses(): Promise<Course[]> {
   try {
-    const supabase = createClient();
+    const supabase = await createClient();
     const { data, error } = await supabase
       .from("courses")
       .select("*")
